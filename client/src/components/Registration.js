@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 function Registration() {
+    
     const [registrationData, setRegistrationData] = useState({
         firstName: "",
         lastName: "",

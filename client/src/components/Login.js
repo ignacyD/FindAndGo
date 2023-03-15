@@ -2,15 +2,15 @@ import { useState} from 'react';
 
 function Login() {
     
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log(loginData);
-    }
-
     const [loginData, setLoginData] = useState({
         email: "",
         password: "",
     })
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(loginData);
+    }
 
     const updateData = e => {
         const fieldName = e.target.name
