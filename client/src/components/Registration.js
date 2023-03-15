@@ -19,7 +19,20 @@ function Registration() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(registrationData)
+        fetch('http://localhost:3001/users/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(registrationData)
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     return (
