@@ -13,8 +13,8 @@ function Main() {
         const locationResponse = await fetch(
             `https://api.opentripmap.com/0.1/en/places/geoname?name=${city}&apikey=${APIkey}`
         );
-        const locationdData = await locationResponse.json();
-        const { lat, lon } = locationdData;
+        const locationData = await locationResponse.json();
+        const { lat, lon } = locationData;
         const attractionsResponse = await fetch(
             `https://api.opentripmap.com/0.1/en/places/radius?radius=1000&lon=${lon}&lat=${lat}&apikey=${APIkey}`
         );
@@ -33,7 +33,7 @@ function Main() {
 
     return (
         <div className="main">
-            <input onChange={(event) => setCity(event.target.value)} placeholder="City"></input>
+            <input onChange={(event) => setCity(event.target.value)} placeholder="City"/>
             <button onClick={getAttractions}>Search</button>
             <AttractionList attractionsList={attractionsList} getAttractionDetails={getAttractionDetails}/>
             <AttractionCard attractionDetails={attractionDetails}/>

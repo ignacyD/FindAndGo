@@ -23,15 +23,14 @@ function Login() {
     return(
         <div className="login">
             <form onSubmit={handleSubmit}>
-            <label>
+                <label>
                     <input
                         type="text"
                         placeholder="email"
                         name='email'
                         value={loginData.email}
                         onChange={updateData}
-                    >
-                    </input>
+                    />
                 </label>
                 <label>
                     <input
@@ -40,7 +39,7 @@ function Login() {
                         name='password'
                         value={loginData.password}
                         onChange={updateData}
-                    ></input>
+                    />
                 </label>
                 <button type="submit">Submit</button>
             </form>
