@@ -1,7 +1,8 @@
-import { useState} from 'react';
+import { useState } from 'react';
+import './Login.css';
 
 function Login() {
-    
+
     const [loginData, setLoginData] = useState({
         email: "",
         password: "",
@@ -20,13 +21,13 @@ function Login() {
         }))
     }
 
-    return(
+    return (
         <div className="login">
             <form onSubmit={handleSubmit}>
                 <label>
                     <input
                         type="text"
-                        placeholder="email"
+                        placeholder="Email"
                         name='email'
                         value={loginData.email}
                         onChange={updateData}
@@ -42,6 +43,8 @@ function Login() {
                     />
                 </label>
                 <button type="submit">Submit</button>
+                <p>If you don't have an account, please register</p>
+                <button>Register</button>
             </form>
         </div>
     )
