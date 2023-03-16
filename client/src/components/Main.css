@@ -20,14 +20,17 @@ div.main div.attractionsDisplay {
 
 div.main div.attractionList {
     overflow-y: auto;
-    border: 1px solid black;
     width: 20vw;
 }
 
 div.main div.attractionList div{
-    padding: 0 10px;
-    border: 1px solid black;
+    padding: 10px;
+    border-bottom: 1px solid black;
     cursor: pointer;
+}
+
+div.main div.attractionList h3{
+    margin:0;
 }
 
 div.main div.attractionList div:hover{
@@ -40,7 +43,7 @@ div.main div.attractionCard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    border-left: 1px solid black;
     width: 54vw;
 }
 

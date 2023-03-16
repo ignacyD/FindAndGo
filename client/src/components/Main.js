@@ -21,7 +21,6 @@ function Main() {
         );
         const attractionsData = await attractionsResponse.json();
         const attractionsToDisplay = attractionsData.features.filter(attraction => attraction.properties.name)
-        console.log(attractionsData.features);
         setAttractionsList(attractionsToDisplay);
     }
 
