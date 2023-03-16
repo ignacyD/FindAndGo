@@ -1,0 +1,15 @@
+.footer {
+    background-color: rgb(5, 74, 145);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.footer_text {
+font-family: 'Andika', sans-serif;
+color: #DBE4EE;
+}
