@@ -1,5 +1,5 @@
 .header {
-    background-color: #054A91;
+    background-color: #054a91;
     position: absolute;
     top: 0;
     left: 0;
@@ -10,30 +10,28 @@
     padding-right: 20px;
     height: 40px;
 }
+
 .header_name {
     margin: 0;
-    color: #DBE4EE;
-    font-family: 'Amatic SC';
+    color: #dbe4ee;
+    font-family: "Amatic SC";
 }
+
 .header_button {
-display:inline-flex;
-justify-content: center;
-width: 90px;
-height: 30px;
-background-color: #F17300;
-padding: 10px;
-border-radius: 5px;
-margin-left: 10px;
-margin-top: 5px;
-margin-bottom: 5px;
-font-family: 'Amatic SC';
-font-size: 15px;
-font-weight: bold;
-text-align: center;
-color: #054A91;
-
-
+    width: 90px;
+    height: 30px;
+    background-color: #f17300;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: "Amatic SC";
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #054a91;
 }
+
 .header_button:hover {
-    background-color: #DBE4EE;
+    background-color: #dbe4ee;
 }
