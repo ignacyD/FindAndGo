@@ -46,8 +46,7 @@ function Registration() {
                         name='firstName'
                         value={registrationData.firstName}
                         onChange={updateData}
-                    >
-                    </input>
+                    />
                 </label>
                 <label>
                     <input
@@ -56,7 +55,7 @@ function Registration() {
                         name='lastName'
                         value={registrationData.lastName}
                         onChange={updateData}
-                    ></input>
+                    />
                 </label>
                 <label>
                     <input
@@ -65,7 +64,7 @@ function Registration() {
                         name='email'
                         value={registrationData.email}
                         onChange={updateData}
-                    ></input>
+                    />
                 </label>
                 <label>
                     <input
@@ -74,7 +73,7 @@ function Registration() {
                         name='password'
                         value={registrationData.password}
                         onChange={updateData}
-                    ></input>
+                    />
                 </label>
                 <label>
                     <input
@@ -83,7 +82,7 @@ function Registration() {
                         name='retypePassword'
                         value={registrationData.retypePassword}
                         onChange={updateData}
-                    ></input>
+                    />
                 </label>
                 <button type="submit">Submit</button>
             </form>
