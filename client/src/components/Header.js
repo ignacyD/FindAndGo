@@ -1,5 +1,5 @@
 import "./Header.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Header() {
   const [favourButtonDisplay, setfavourButtonDisplay] = useState(false);
