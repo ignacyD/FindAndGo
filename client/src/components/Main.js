@@ -1,5 +1,6 @@
 import AttractionList from "./AttractionList";
 import AttractionCard from "./AttractionCard";
+import "./Main.css";
 import { useState } from "react";
 
 function Main() {
@@ -7,7 +8,7 @@ function Main() {
 
     const [city, setCity] = useState("");
     const [attractionsList, setAttractionsList] = useState([]);
-    const [attractionDetails, setAttractionDetails] = useState({})
+    const [attractionDetails, setAttractionDetails] = useState({});
 
     async function getAttractions() {
         const locationResponse = await fetch(
@@ -19,24 +20,33 @@ function Main() {
             `https://api.opentripmap.com/0.1/en/places/radius?radius=1000&lon=${lon}&lat=${lat}&apikey=${APIkey}`
         );
         const attractionsData = await attractionsResponse.json();
-        setAttractionsList(attractionsData.features);
+        const attractionsToDisplay = attractionsData.features.filter(attraction => attraction.properties.name)
+        console.log(attractionsData.features);
+        setAttractionsList(attractionsToDisplay);
     }
 
     async function getAttractionDetails(attraction) {
         const detailsResponse = await fetch(
-            `http://api.opentripmap.com/0.1/en/places/xid/${attraction.properties.xid}?apikey=${APIkey}`, 
+            `http://api.opentripmap.com/0.1/en/places/xid/${attraction.properties.xid}?apikey=${APIkey}`
         );
         const detailsData = await detailsResponse.json();
-        setAttractionDetails(detailsData)
-        console.log(detailsData)
+        setAttractionDetails(detailsData);
+        console.log(detailsData);
     }
 
     return (
         <div className="main">
-            <input onChange={(event) => setCity(event.target.value)} placeholder="City"/>
-            <button onClick={getAttractions}>Search</button>
-            <AttractionList attractionsList={attractionsList} getAttractionDetails={getAttractionDetails}/>
-            <AttractionCard attractionDetails={attractionDetails}/>
+            <div className="searchbar">
+                <input onChange={(event) => setCity(event.target.value)} placeholder="City" />
+                <button onClick={getAttractions}>Search</button>
+            </div>
+            <div className="attractionsDisplay">
+                <AttractionList
+                    attractionsList={attractionsList}
+                    getAttractionDetails={getAttractionDetails}
+                />
+                <AttractionCard attractionDetails={attractionDetails} />
+            </div>
         </div>
     );
 }
