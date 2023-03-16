@@ -1,0 +1,62 @@
+div.main {
+    background-color: #DBE4EE;
+    display: flex;
+    flex-direction: column;
+}
+
+div.main div.searchbar {
+    text-align: center;
+    padding: 50px;
+}
+
+div.main div.attractionsDisplay {
+    background-color: #81A4CD;
+    display: flex;
+    margin: 0 13vw 10vh 13vw;
+    border: 1px solid black;
+    height: 63vh;
+    font-family: 'Andika', sans-serif;
+}
+
+div.main div.attractionList {
+    overflow-y: auto;
+    width: 20vw;
+}
+
+div.main div.attractionList div{
+    padding: 10px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+div.main div.attractionList h3{
+    margin:0;
+}
+
+div.main div.attractionList div:hover{
+    background-color: #054A91;
+    color: white;
+}
+
+div.main div.attractionCard {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid black;
+    width: 54vw;
+}
+
+div.main div.attractionCard img{
+    margin-bottom: 20px
+}
+
+div.main div.attractionCard p{
+    margin: 0 20px
+}
+
+div.main div.attractionCard a{
+    margin: 20px
+}
+
+
