@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Registration.css'
 
 function Registration() {
+
+    const [message, setMessage] = useState("");
+    const [doPasswordsMatch, setdoPasswordsMatch] = useState(false)
     
     const [registrationData, setRegistrationData] = useState({
         firstName: "",
@@ -10,6 +13,19 @@ function Registration() {
         password: "",
         retypePassword: ""
     })
+
+    useEffect(()=>{
+        if(registrationData.password==="" && registrationData.retypePassword===""){
+        setMessage("Please Provide password")
+        }else if(registrationData.password===registrationData.retypePassword){
+            setMessage("Please submit") 
+            setdoPasswordsMatch(true)
+        }else{
+        setMessage("Passwords don't match")
+        setdoPasswordsMatch(false)
+        }
+    },[registrationData.password, registrationData.retypePassword])
+
 
     const updateData = e => {
         const fieldName = e.target.name
@@ -67,6 +83,7 @@ function Registration() {
                         onChange={updateData}
                     />
                 </label>
+                <p>{message}</p>
                 <label>
                     <input
                         type="password"
@@ -85,7 +102,7 @@ function Registration() {
                         onChange={updateData}
                     />
                 </label>
-                <button type="submit">Submit</button>
+                <button disabled={!doPasswordsMatch} type="submit">Submit</button>
             </form>
         </div>
     )
