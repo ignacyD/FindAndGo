@@ -1,4 +1,4 @@
-function AttractionCard({attractionDetails}) {
+function AttractionCard({attractionDetails, isUserLogged}) {
     return(
         <div className="attractionCard">
             <h1>{attractionDetails.name}</h1>

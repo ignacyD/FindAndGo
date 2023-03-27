@@ -1,9 +1,6 @@
 import "./Header.css";
-import { useState } from "react";
-
-function Header() {
-  const [isUserLogged, setIsUserLogged] = useState(false);
-
+function Header({ isUserLogged, setIsUserLogged }) {
+  
   return (
     <div className="header">
       <h1 className="header_name">Find&Go</h1>

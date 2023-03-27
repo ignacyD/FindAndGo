@@ -13,7 +13,7 @@ div.main div.attractionsDisplay {
     background-color: #81A4CD;
     display: flex;
     margin: 0 13vw 10vh 13vw;
-    border: 1px solid black;
+    border: 1px solid #000000;
     height: 63vh;
     font-family: 'Andika', sans-serif;
 }
@@ -25,7 +25,7 @@ div.main div.attractionList {
 
 div.main div.attractionList div{
     padding: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000000;
     cursor: pointer;
 }
 
@@ -35,7 +35,7 @@ div.main div.attractionList h3{
 
 div.main div.attractionList div:hover{
     background-color: #054A91;
-    color: white;
+    color: #ffffff;
 }
 
 div.main div.attractionCard {
@@ -43,7 +43,7 @@ div.main div.attractionCard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-left: 1px solid black;
+    border-left: 1px solid #000000;
     width: 54vw;
 }
 
