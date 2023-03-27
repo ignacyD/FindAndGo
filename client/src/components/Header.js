@@ -13,7 +13,7 @@ function Header({ isUserLogged, setIsUserLogged }) {
           <button className="header_button">About</button>
         </Link>
         {isUserLogged && <Link to="/favourites"><button className="header_button">Favourites</button></Link>}
-        {!isUserLogged && <Link to="/login"><button className="header_button" onClick={() => setIsUserLogged(true)}>Log In</button></Link>}
+        {!isUserLogged && <Link to="/login"><button className="header_button" >Log In</button></Link>}
         {isUserLogged && <Link to="/"><button className="header_button" onClick={() => setIsUserLogged(false)}>Log Out</button></Link>}
       </div>
     </div>

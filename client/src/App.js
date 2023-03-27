@@ -17,7 +17,7 @@ function App() {
             <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} />
             <Routes>
                 <Route path="/" element={<Main isUserLogged={isUserLogged} />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<Login isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged}/>} />
                 <Route path="/register" element={<Registration />} />
                 <Route path="/favourites" element={<Favourites />} />
                 <Route path="/about" element={<About />} />
