@@ -8,7 +8,8 @@ function Login({ isUserLogged, setIsUserLogged }) {
         password: "",
     });
 
-    async function checkIfUserExists() {
+    function handleSubmit(event) {
+        event.preventDefault();
         fetch("http://localhost:3001/login", {
             method: "POST",
             headers: {
@@ -20,23 +21,15 @@ function Login({ isUserLogged, setIsUserLogged }) {
             .then((data) => {
                 if (data) {
                     setIsUserLogged(true);
+                    console.log("You're now logged");
                 } else {
                     setIsUserLogged(false);
+                    console.log("Something went wrong, try again");
                 }
             })
             .catch((error) => {
                 console.log(error);
             });
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        checkIfUserExists();
-        if (isUserLogged) {
-            console.log("You're now logged");
-        } else {
-            console.log("something went wrong try again");
-        }
     }
 
     const updateData = (e) => {
