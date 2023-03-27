@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Login({ isUserLogged, setIsUserLogged }) {
+function Login({ isUserLogged, setIsUserLogged, setUserData }) {
     const [loginData, setLoginData] = useState({
         email: "",
         password: "",
     });
+    const [userMessage, setUserMessage] = useState("")
+    const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -21,10 +23,11 @@ function Login({ isUserLogged, setIsUserLogged }) {
             .then((data) => {
                 if (data) {
                     setIsUserLogged(true);
-                    console.log("You're now logged");
+                    setUserData(data);
+                    navigate("/")
                 } else {
                     setIsUserLogged(false);
-                    console.log("Something went wrong, try again");
+                    setUserMessage("Incorrect email or password")
                 }
             })
             .catch((error) => {
@@ -62,6 +65,7 @@ function Login({ isUserLogged, setIsUserLogged }) {
                     />
                 </label>
                 <button type="submit">Submit</button>
+                {isUserLogged ? null : <p>{userMessage}</p>}
                 <p>If you don't have an account, please register</p>
             </form>
             <Link to="/register">
