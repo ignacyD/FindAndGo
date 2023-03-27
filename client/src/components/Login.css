@@ -1,3 +1,11 @@
+div.login {
+    background-color: #3E7CB1;
+    width: 20%;
+    margin: 100px auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
 div.login input {
     width: 70%;
     padding: 12px 20px;
@@ -8,14 +16,6 @@ div.login input {
     display: block;
     margin: auto;
     font-family: 'Andika', sans-serif;
-}
-
-div.login form {
-    background-color: #3E7CB1;
-    width: 20%;
-    margin: auto;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 
 div.login button {
@@ -41,4 +41,8 @@ div.login button:hover {
 div.login p {
     text-align: center;
     font-family: 'Amatic SC', cursive;
+}
+
+div.login a {
+    text-decoration: none;
 }

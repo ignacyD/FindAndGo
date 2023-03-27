@@ -1,3 +1,11 @@
+div.registration {
+    background-color: #3E7CB1;
+    width: 20%;
+    margin: 100px auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
 div.registration input {
     width: 70%;
     padding: 12px 20px;
@@ -8,14 +16,6 @@ div.registration input {
     display: block;
     margin: auto;
     font-family: 'Andika', sans-serif;
-}
-
-div.registration form {
-    background-color: #3E7CB1;
-    width: 20%;
-    margin: auto;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 
 div.registration button {
