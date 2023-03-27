@@ -1,14 +1,20 @@
 import "./Header.css";
+import { Link } from 'react-router-dom';
+
 function Header({ isUserLogged, setIsUserLogged }) {
   
   return (
     <div className="header">
+      <Link to="/">
       <h1 className="header_name">Find&Go</h1>
+      </Link>
       <div>
-        <button className="header_button">About</button>
-        {isUserLogged && <button className="header_button">Favourites</button>}
-        {!isUserLogged && <button className="header_button" onClick={() => setIsUserLogged(true)}>Log In</button>}
-        {isUserLogged && <button className="header_button" onClick={() => setIsUserLogged(false)}>Log Out</button>}
+        <Link to="/about">
+          <button className="header_button">About</button>
+        </Link>
+        {isUserLogged && <Link to="/favourites"><button className="header_button">Favourites</button></Link>}
+        {!isUserLogged && <Link to="/login"><button className="header_button" >Log In</button></Link>}
+        {isUserLogged && <Link to="/"><button className="header_button" onClick={() => setIsUserLogged(false)}>Log Out</button></Link>}
       </div>
     </div>
   )

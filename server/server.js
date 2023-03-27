@@ -29,3 +29,11 @@ app.post('/users/create', (req, res) => {
         .then(user => res.json(user))
         .catch(err => res.status(400).json({ success: false }));
 });
+
+app.post('/login', (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    User.findOne({ email: email, password: password})
+        .then(user => res.json(user))
+})

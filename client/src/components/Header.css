@@ -1,9 +1,5 @@
 .header {
     background-color: #054a91;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: space-between;
     padding-left: 20px;
@@ -34,4 +30,8 @@
 
 .header_button:hover {
     background-color: #dbe4ee;
+}
+
+div.header a {
+    text-decoration: none;
 }
