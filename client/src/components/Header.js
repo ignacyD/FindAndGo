@@ -11,7 +11,8 @@ function Header({ isUserLogged, setIsUserLogged, userData, setUserData }) {
   return (
     <div className="header">
       <Link to="/">
-      <h1 className="header_name">Find&Go</h1>
+        <img src="./logo.png"></img>
+        <h1 className="header_name">Find&Go</h1>
       </Link>
       <div>
         {userData !== "" && <h3 className="welcome">Welcome, {userData.firstName}!</h3>}

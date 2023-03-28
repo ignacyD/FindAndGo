@@ -1,21 +1,21 @@
 .header {
     background-color: #054a91;
     display: flex;
-    justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 40px;
+    padding: 5px 20px;
+    height: 50px;
 }
 
 .header_name {
-    margin: 0;
+    margin: 0 10px;
     color: #dbe4ee;
     font-family: "Amatic SC";
+    font-size: 40px;
 }
 
 .header div {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .header .welcome {
@@ -33,7 +33,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     font-family: "Amatic SC";
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     color: #054a91;
@@ -45,4 +45,5 @@
 
 div.header a {
     text-decoration: none;
+    display: flex;
 }

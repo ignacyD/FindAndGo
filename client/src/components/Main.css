@@ -7,6 +7,29 @@ div.main {
 div.main div.searchbar {
     text-align: center;
     padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.main div.searchbar button {
+    background-color: #f17300;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: "Amatic SC";
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #054a91;
+}
+
+div.main input {
+    height: 25px;
+    text-align: center;
+    font-family: "Andika", sans-serif;
+    font-size: 16px;
+    margin-right: 10px;
 }
 
 div.main div.attractionsDisplay {
