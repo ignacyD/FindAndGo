@@ -14,6 +14,8 @@ div.main div.searchbar {
 
 div.main div.searchbar button {
     background-color: #f17300;
+    width: 90px;
+    height: 30px;
     border-radius: 5px;
     font-family: "Amatic SC";
     font-size: 20px;
