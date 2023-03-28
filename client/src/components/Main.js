@@ -5,7 +5,6 @@ import { useState } from "react";
 import { APIkey, apiUrl } from "./../environments.js";
 
 function Main({ isUserLogged, userData, setUserData }) {
-
     const [city, setCity] = useState("");
     const [attractionsList, setAttractionsList] = useState([]);
     const [attractionDetails, setAttractionDetails] = useState("");
@@ -19,7 +18,7 @@ function Main({ isUserLogged, userData, setUserData }) {
             `${apiUrl}/places/radius?radius=1000&lon=${lon}&lat=${lat}&apikey=${APIkey}`
         );
         const attractionsData = await attractionsResponse.json();
-        const attractionsToDisplay = attractionsData.features.filter(attraction => attraction.properties.name)
+        const attractionsToDisplay = attractionsData.features.filter(attraction => attraction.properties.name);
         setAttractionsList(attractionsToDisplay);
     }
 
@@ -29,7 +28,6 @@ function Main({ isUserLogged, userData, setUserData }) {
         );
         const detailsData = await detailsResponse.json();
         setAttractionDetails(detailsData);
-        console.log(detailsData);
     }
 
     return (
@@ -38,18 +36,20 @@ function Main({ isUserLogged, userData, setUserData }) {
                 <input onChange={(event) => setCity(event.target.value)} placeholder="City" />
                 <button onClick={getAttractions}>Search</button>
             </div>
-            <div className="attractionsDisplay">
-                <AttractionList
-                    attractionsList={attractionsList}
-                    getAttractionDetails={getAttractionDetails}
-                />
-                <AttractionCard
-                    attractionDetails={attractionDetails}
-                    isUserLogged={isUserLogged}
-                    userData={userData}
-                    setUserData={setUserData}
-                />
-            </div>
+            {attractionsList.length > 0 && (
+                <div className="attractionsDisplay">
+                    <AttractionList
+                        attractionsList={attractionsList}
+                        getAttractionDetails={getAttractionDetails}
+                    />
+                    <AttractionCard
+                        attractionDetails={attractionDetails}
+                        isUserLogged={isUserLogged}
+                        userData={userData}
+                        setUserData={setUserData}
+                    />
+                </div>
+            )}
         </div>
     );
 }
