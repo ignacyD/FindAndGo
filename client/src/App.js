@@ -12,12 +12,12 @@ import { Route, Routes } from "react-router-dom";
 function App() {
     const [isUserLogged, setIsUserLogged] = useState(false);
     const [userData, setUserData] = useState("");
-    
+    console.log(userData)
     return (
         <div className="App">
             <Header isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} userData={userData} setUserData={setUserData} />
             <Routes>
-                <Route path="/" element={<Main isUserLogged={isUserLogged} />} />
+                <Route path="/" element={<Main isUserLogged={isUserLogged} userData={userData} setUserData={setUserData} />} />
                 <Route path="/login" element={<Login isUserLogged={isUserLogged} setIsUserLogged={setIsUserLogged} setUserData={setUserData}/>} />
                 <Route path="/register" element={<Registration />} />
                 <Route path="/favourites" element={<Favourites />} />
@@ -29,3 +29,4 @@ function App() {
 }
 
 export default App;
+

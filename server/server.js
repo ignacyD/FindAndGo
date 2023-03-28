@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 const User = require("./model/User");
 mongoose.connect("mongodb+srv://IgnacyG:FindandGo@cluster0.uqvqvaj.mongodb.net/Find&Go");
@@ -17,6 +18,7 @@ app.post('/users/create', (req, res) => {
     const password = req.body.password
     const email = req.body.email;
     const createdAt = Date.now();
+    const favourites = [];
 
     const user = new User({
         firstName,
@@ -24,6 +26,7 @@ app.post('/users/create', (req, res) => {
         password,
         email,
         createdAt,
+        favourites
     });
     user.save()
         .then(user => res.json(user))
@@ -35,5 +38,11 @@ app.post('/login', (req, res) => {
     const password = req.body.password;
 
     User.findOne({ email: email, password: password})
+        .then(user => res.json(user))
+})
+
+app.patch("/favourites", (req, res) => {
+    (User.findOneAndUpdate({ _id: req.body.userData._id },
+        { $push: { favourites: req.body.attraction } }))
         .then(user => res.json(user))
 })
