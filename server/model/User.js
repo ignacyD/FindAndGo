@@ -7,6 +7,7 @@ const userSchema = new Schema({
     password: String,
     email: String,
     createdAt: Date,
+    favorites: Array,
 });
 
 const User = model('User', userSchema);
