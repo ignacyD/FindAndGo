@@ -8,7 +8,7 @@ function Main({isUserLogged}) {
 
     const [city, setCity] = useState("");
     const [attractionsList, setAttractionsList] = useState([]);
-    const [attractionDetails, setAttractionDetails] = useState({});
+    const [attractionDetails, setAttractionDetails] = useState("");
 
     async function getAttractions() {
         const locationResponse = await fetch(
