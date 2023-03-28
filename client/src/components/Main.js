@@ -4,7 +4,7 @@ import "./Main.css";
 import { useState } from "react";
 import { APIkey, apiUrl } from "./../environments.js";
 
-function Main({isUserLogged}) {
+function Main({ isUserLogged, userData, setUserData }) {
 
     const [city, setCity] = useState("");
     const [attractionsList, setAttractionsList] = useState([]);
@@ -43,7 +43,12 @@ function Main({isUserLogged}) {
                     attractionsList={attractionsList}
                     getAttractionDetails={getAttractionDetails}
                 />
-                <AttractionCard attractionDetails={attractionDetails} isUserLogged={isUserLogged}/>
+                <AttractionCard
+                    attractionDetails={attractionDetails}
+                    isUserLogged={isUserLogged}
+                    userData={userData}
+                    setUserData={setUserData}
+                />
             </div>
         </div>
     );
