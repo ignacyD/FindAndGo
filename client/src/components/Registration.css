@@ -18,6 +18,13 @@ div.registration input {
     font-family: 'Andika', sans-serif;
 }
 
+div.registration p {
+    font-family: 'Andika', sans-serif;
+    position: center;
+    margin: auto;
+    margin-left: 20px;
+}
+
 div.registration button {
     background-color: #F17300;
     color: #054A91;
@@ -37,3 +44,9 @@ div.registration button:hover {
     background-color: #DBE4EE;
     color: #054A91;
 }
+    
+div.registration button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+      
