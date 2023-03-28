@@ -13,6 +13,17 @@
     font-family: "Amatic SC";
 }
 
+.header div {
+    display: flex;
+    align-items: center;
+}
+
+.header .welcome {
+    color: #dbe4ee;
+    font-family: "Amatic SC";
+    margin-right: 20px;
+}
+
 .header_button {
     width: 90px;
     height: 30px;
