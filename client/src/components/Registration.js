@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import './Registration.css'
+
 
 function Registration() {
 
     const [message, setMessage] = useState("");
     const [doPasswordsMatch, setdoPasswordsMatch] = useState(false)
-    
     const [registrationData, setRegistrationData] = useState({
         firstName: "",
         lastName: "",
@@ -13,6 +14,8 @@ function Registration() {
         password: "",
         retypePassword: ""
     })
+    const navigate = useNavigate();
+
 
     useEffect(()=>{
         if(registrationData.password==="" && registrationData.retypePassword===""){
@@ -47,6 +50,7 @@ function Registration() {
             .then(response => response.json())
             .then(response => {
                 console.log(response);
+                navigate("/login")
             })
             .catch(error => {
                 console.log(error);
