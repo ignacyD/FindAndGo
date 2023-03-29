@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './Registration.css'
-
+import passwordValidator from "password-validator"
 
 function Registration() {
-
     const [message, setMessage] = useState("");
+    const [validMessage, setValidMessage] = useState("");
     const [doPasswordsMatch, setdoPasswordsMatch] = useState(false)
+    const [isPasswordStrong, setIsPasswordStrong] = useState(false)
     const [registrationData, setRegistrationData] = useState({
         firstName: "",
         lastName: "",
@@ -16,18 +17,32 @@ function Registration() {
     })
     const navigate = useNavigate();
 
+    const schema = new passwordValidator();
 
-    useEffect(()=>{
-        if(registrationData.password==="" && registrationData.retypePassword===""){
-        setMessage("Please Provide password")
-        }else if(registrationData.password===registrationData.retypePassword){
-            setMessage("Please submit") 
+    schema
+        .is().min(8)
+        .has().digits(2)
+
+    useEffect(() => {
+        if (registrationData.password === registrationData.retypePassword) {
+            setMessage("")
             setdoPasswordsMatch(true)
-        }else{
-        setMessage("Passwords don't match")
-        setdoPasswordsMatch(false)
+        } else {
+            setMessage("Passwords don't match")
+            setdoPasswordsMatch(false)
         }
-    },[registrationData.password, registrationData.retypePassword])
+    }, [registrationData.password, registrationData.retypePassword])
+
+    useEffect(() => {
+        if (!schema.validate(registrationData.password)) {
+            setValidMessage("Password must contain 8 characters and at least 2 digits")
+            setIsPasswordStrong(false)
+        }
+        else {
+            setValidMessage("")
+            setIsPasswordStrong(true)
+        }
+    }, [registrationData.password])
 
 
     const updateData = e => {
@@ -87,7 +102,6 @@ function Registration() {
                         onChange={updateData}
                     />
                 </label>
-                <p>{message}</p>
                 <label>
                     <input
                         type="password"
@@ -106,7 +120,9 @@ function Registration() {
                         onChange={updateData}
                     />
                 </label>
-                <button disabled={!doPasswordsMatch} type="submit">Submit</button>
+                <p>{message}</p>
+                <p>{validMessage}</p>
+                <button disabled={!(doPasswordsMatch && isPasswordStrong)} type="submit">Submit</button>
             </form>
         </div>
     )
