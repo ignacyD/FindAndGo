@@ -1,5 +1,5 @@
 div.main {
-    background-color: #dbe4ee;
+    background-color: #cdd2d8;
     display: flex;
     flex-direction: column;
 }
@@ -17,11 +17,18 @@ div.main div.searchbar button {
     width: 90px;
     height: 30px;
     border-radius: 5px;
+    border-style: none;
     font-family: "Amatic SC";
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    color: #054a91;
+    color: #ffffffb9;
+    transition-duration: 0.4s;
+}
+
+div.main div.searchbar button:hover {
+    background-color: #b0570a;
+
 }
 
 div.main input {
@@ -36,9 +43,11 @@ div.main div.attractionsDisplay {
     background-color: #81a4cd;
     display: flex;
     margin: 0 13vw 10vh 13vw;
+    border-radius: 10px;
     border: 1px solid #000000;
-    height: 63vh;
+    height: 70vh;
     font-family: "Andika", sans-serif;
+    color: #000407d4;
 }
 
 div.main div.attractionList {
@@ -57,7 +66,7 @@ div.main div.attractionList h3 {
 }
 
 div.main div.attractionList div:hover {
-    background-color: #054a91;
+    background-color: #054b919d;
     color: #ffffff;
 }
 
@@ -68,14 +77,17 @@ div.main div.attractionCard {
     align-items: center;
     border-left: 1px solid #000000;
     width: 54vw;
+    text-align: center;
 }
 
 div.main div.attractionCard img {
     margin-bottom: 20px;
+    border-radius: 20px;
 }
 
 div.main div.attractionCard p {
     margin: 0 20px;
+    font-size: 20px;
 }
 
 div.main div.attractionCard a {

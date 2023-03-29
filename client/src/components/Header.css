@@ -28,7 +28,8 @@
     width: 90px;
     height: 30px;
     background-color: #f17300;
-    border-radius: 5px;
+    border-radius: 4px;
+    border-style: none;
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -36,11 +37,13 @@
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    color: #054a91;
+    color: #ffffffb9;
+    transition-duration: 0.4s;
 }
 
+
 .header_button:hover {
-    background-color: #dbe4ee;
+    background-color: #b0570a;
 }
 
 div.header a {

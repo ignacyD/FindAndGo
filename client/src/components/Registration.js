@@ -74,6 +74,7 @@ function Registration() {
 
     return (
         <div className="registration">
+            <div>Registration</div>
             <form onSubmit={handleSubmit}>
                 <label>
                     <input

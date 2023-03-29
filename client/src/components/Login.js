@@ -45,6 +45,7 @@ function Login({ isUserLogged, setIsUserLogged, setUserData }) {
 
     return (
         <div className="login">
+            <div>Log in</div>
             <form onSubmit={handleSubmit}>
                 <label>
                     <input
