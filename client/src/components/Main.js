@@ -36,7 +36,7 @@ function Main({ isUserLogged, userData, setUserData }) {
                 <input onChange={(event) => setCity(event.target.value)} placeholder="City" />
                 <button onClick={getAttractions}>Search</button>
             </div>
-            {attractionsList.length > 0 && (
+            {attractionsList.length > 0 ? (
                 <div className="attractionsDisplay">
                     <AttractionList
                         attractionsList={attractionsList}
@@ -49,7 +49,7 @@ function Main({ isUserLogged, userData, setUserData }) {
                         setUserData={setUserData}
                     />
                 </div>
-            )}
+            ) : <div className="backgroundImage"><img src="./background.JPG" alt="background"></img></div>}
         </div>
     );
 }
