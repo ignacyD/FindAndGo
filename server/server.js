@@ -46,3 +46,10 @@ app.patch("/favourites", (req, res) => {
         { $push: { favourites: req.body.attraction } }))
         .then(user => res.json(user))
 })
+
+app.delete("/favourites", (req, res) => {
+    console.log(req.body)
+    User.updateOne({ _id: req.body.userID }, 
+        {$pull: { favourites: { xid: req.body.attractionID}}})
+        .then(user => res.json(user))
+})

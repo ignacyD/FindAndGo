@@ -8,7 +8,7 @@ function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData
         fetch("http://localhost:3001/favourites", {
             method: "PATCH",
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({attraction: attractionDetails, userData: userData}),
+            body: JSON.stringify({ attraction: attractionDetails, userData: userData }),
         })
             .then(response => response.json())
             .then(data => console.log(data))
@@ -18,7 +18,26 @@ function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData
     }
 
     function removeFromFavourites(xid) {
-        console.log(xid)
+        setUserData((existingValues) => ({
+            ...existingValues,
+            favourites: [...userData.favourites.filter(attraction => attraction.xid !== xid)],
+        }))
+        fetch(`http://localhost:3001/favourites`, {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "DELETE",
+            body: JSON.stringify( {userID: userData._id, attractionID: xid})
+
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     return (

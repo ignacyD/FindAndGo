@@ -19,6 +19,7 @@ div.favourites div.attractionCard img {
 
 div.favourites div.attractionCard p {
     margin: 0 20px;
+    font-family: "Andika", sans-serif;
 }
 
 div.favourites div.attractionCard a {
@@ -31,6 +32,15 @@ div.favourites div.attractionCard button {
     border-radius: 5px;
     font-family: "Amatic SC";
     font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #054a91;
+}
+
+div.noFavourites p {
+    margin-top: 10%a;
+    font-family: "Amatic SC";
+    font-size: 40px;
     font-weight: bold;
     text-align: center;
     color: #054a91;
