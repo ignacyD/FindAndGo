@@ -19,6 +19,9 @@ function Header({ isUserLogged, setIsUserLogged, userData, setUserData }) {
         <Link to="/about">
           <button className="header_button">About</button>
         </Link>
+        <Link to="/opinions">
+          <button className="header_button">Opinions</button>
+        </Link>
         {isUserLogged && <Link to="/favourites"><button className="header_button">Favourites</button></Link>}
         {!isUserLogged && <Link to="/login"><button className="header_button" >Log In</button></Link>}
         {isUserLogged && <Link to="/"><button className="header_button" onClick={logout}>Log Out</button></Link>}
