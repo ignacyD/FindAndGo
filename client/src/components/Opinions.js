@@ -31,7 +31,7 @@ function Opinions({ isUserLogged, userData }) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({...opinion, user: userData.firstName}),
+            body: JSON.stringify({ ...opinion, user: userData.firstName }),
         })
             .then((response) => response.json())
             .then((data) => {
@@ -50,24 +50,27 @@ function Opinions({ isUserLogged, userData }) {
         <div className="opinions">
             {isUserLogged && (
                 <form onSubmit={handleSubmit}>
-                    <label>
-                        <input
-                            type="text"
-                            placeholder="Title"
-                            name="title"
-                            value={opinion.title}
-                            onChange={updateData}
-                        />
-                    </label>
-                    <label>
-                        <textarea
-                            type="text"
-                            placeholder="Comment"
-                            name="comment"
-                            value={opinion.comment}
-                            onChange={updateData}
-                        />
-                    </label>
+                    <h1>Leave your opinion!</h1>
+                    <p>
+                        Leaving your opinions on the places you've visited can greatly help other
+                        travelers make more informed decisions about where to go and what to see. By
+                        sharing your personal experiences and insights, you can help others discover
+                        hidden gems or avoid tourist traps.
+                    </p>
+                    <input
+                        type="text"
+                        placeholder="Title"
+                        name="title"
+                        value={opinion.title}
+                        onChange={updateData}
+                    />
+                    <textarea
+                        type="text"
+                        placeholder="Comment"
+                        name="comment"
+                        value={opinion.comment}
+                        onChange={updateData}
+                    />
                     <button
                         type="submit"
                         disabled={!(opinion.title.length > 0 && opinion.comment.length > 0)}
