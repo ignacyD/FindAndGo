@@ -47,7 +47,7 @@ function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData
             {attractionDetails.wikipedia_extracts ? <p>{attractionDetails.wikipedia_extracts.text}</p> : null}
             {(isUserLogged && attractionDetails) && <button onClick={addToFavourites}>Add to favourites</button>}
             {isFavourite && <button onClick={() => removeFromFavourites(attractionDetails.xid)}>Remove from favourites</button>}
-            {attractionDetails.otm ? <a href={attractionDetails.otm} target="_blank" rel="noreferrer">Show more at OpenTripMap</a> : null}
+            {attractionDetails.otm ? <a href={attractionDetails.otm} target="_blank" rel="noreferrer">Show more at OpenTripMap <i class="fa-solid fa-map"></i></a> : null}
         </div>
     )
 }
