@@ -89,6 +89,7 @@ div.main div.attractionCard {
     border-left: 3px solid #f17400b4;
     width: 54vw;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 div.main div.attractionCard img {
@@ -129,6 +130,7 @@ div.main div.attractionCard button {
     text-align: center;
     color: #ffffffcf;
     transition-duration: 0.4s;
+
 }
 div.main div.attractionCard button:hover{
     background-color: #b0570a;
