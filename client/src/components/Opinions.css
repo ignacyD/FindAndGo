@@ -1,3 +1,12 @@
+div.opinions .title {
+    background-color: #054a91;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    margin: 5vh 40vw 5vh 40vw;
+    font-family: "Andika", sans-serif;
+}
+
 div.opinions form {
     display: flex;
     flex-direction: column;
@@ -57,7 +66,6 @@ div.opinions button:disabled {
     opacity: 0.5;
     pointer-events: none;
 }
-
 
 div.opinions div.opinion {
     background-color: #3E7CB1;

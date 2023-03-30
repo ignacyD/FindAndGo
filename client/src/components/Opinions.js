@@ -48,9 +48,12 @@ function Opinions({ isUserLogged, userData }) {
 
     return (
         <div className="opinions">
+            <div className="title">
+                <h1>Opinions</h1>
+            </div>
             {isUserLogged && (
                 <form onSubmit={handleSubmit}>
-                    <h1>Leave your opinion!</h1>
+                    <h2>Leave your opinion!</h2>
                     <p>
                         Leaving your opinions on the places you've visited can greatly help other
                         travelers make more informed decisions about where to go and what to see. By
@@ -83,7 +86,10 @@ function Opinions({ isUserLogged, userData }) {
                 <div className="opinion" key={opinion._id}>
                     <h3>{opinion.title}</h3>
                     <p>{opinion.comment}</p>
-                    <p className="createdBy">This opinion was written by {opinion.user}</p>
+                    <p className="createdBy">
+                        This opinion was written by {opinion.user} on{" "}
+                        {opinion.createdAt.slice(0, 10)}
+                    </p>
                 </div>
             ))}
         </div>
