@@ -1,3 +1,7 @@
+div.opinions {
+    padding-bottom: 40px;
+}
+
 div.opinions .title {
     background-color: #054a91;
     color: #FFFFFF;
@@ -17,6 +21,8 @@ div.opinions form {
     align-items: center;
     color: #FFFFFF;
     font-family: "Andika", sans-serif;
+    border: 3px solid #f17300;
+    border-radius: 10px;
 }
 
 div.opinions input {
@@ -28,6 +34,7 @@ div.opinions input {
     background-color: #DBE4EE;
     display: block;
     font-family: 'Andika', sans-serif;
+
 }
 
 div.opinions textarea {
@@ -44,7 +51,7 @@ div.opinions textarea {
 
 div.opinions button {
     background-color: #F17300;
-    color: #ffffffb9;
+    color: #ffffffd4;
     margin: auto;
     display: block;
     border-radius: 4px;
@@ -53,9 +60,10 @@ div.opinions button {
     height: 40px;
     margin-bottom: 10px;
     margin-top: 10px;
-    font-family: 'Amatic SC', cursive;
-    font-size: 20px;
     transition-duration: 0.4s;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 div.opinions button:hover {
@@ -75,6 +83,8 @@ div.opinions div.opinion {
     text-align: center;
     margin: 5vh 20vw 5vh 20vw;
     padding: 20px 50px;
+    border: 3px solid #f17300;
+    border-radius: 10px;
 }
 
 div.opinions div.opinion .createdBy {
