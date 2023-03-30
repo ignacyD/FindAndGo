@@ -8,6 +8,7 @@ function Main({ isUserLogged, userData, setUserData }) {
     const [city, setCity] = useState("");
     const [attractionsList, setAttractionsList] = useState([]);
     const [attractionDetails, setAttractionDetails] = useState("");
+    const [favClicked, setFavClicked] = useState(false)
 
     async function getAttractions() {
         const locationResponse = await fetch(
@@ -28,13 +29,14 @@ function Main({ isUserLogged, userData, setUserData }) {
         );
         const detailsData = await detailsResponse.json();
         setAttractionDetails(detailsData);
+        setFavClicked(false)
     }
 
     return (
         <div className="main">
             <div className="searchbar">
                 <input onChange={(event) => setCity(event.target.value)} placeholder="City" />
-                <button onClick={getAttractions}>Search  <i class="fa-solid fa-magnifying-glass"></i> </button>
+                <button onClick={getAttractions}>Search  <i className="fa-solid fa-magnifying-glass"></i> </button>
             </div>
             {attractionsList.length > 0 ? (
                 <div className="attractionsDisplay">
@@ -47,6 +49,8 @@ function Main({ isUserLogged, userData, setUserData }) {
                         isUserLogged={isUserLogged}
                         userData={userData}
                         setUserData={setUserData}
+                        favClicked={favClicked}
+                        setFavClicked={setFavClicked}
                     />
                 </div>
             ) : <div className="backgroundImage"><img src="./background.JPG" alt="background"></img></div>}

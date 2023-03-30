@@ -24,7 +24,7 @@ function Header({ isUserLogged, setIsUserLogged, userData, setUserData }) {
         </Link>
         {isUserLogged && <Link to="/favourites"><button className="header_button">Favourites</button></Link>}
         {!isUserLogged && <Link to="/login"><button className="header_button" >Log In </button></Link>}
-        {isUserLogged && <Link to="/"><button className="header_button" onClick={logout}>Log Out  <i class="fa-solid fa-right-to-bracket"></i></button></Link>}
+        {isUserLogged && <Link to="/"><button className="header_button" onClick={logout}>Log Out  <i className="fa-solid fa-right-to-bracket"></i></button></Link>}
       </div>
     </div>
   )

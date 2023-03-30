@@ -70,7 +70,6 @@ function Registration() {
         })
             .then(response => response.json())
             .then(response => {
-                console.log(response);
                 navigate("/login")
             })
             .catch(error => {

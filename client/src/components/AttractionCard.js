@@ -1,4 +1,4 @@
-function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData, isFavourite }) {
+function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData, isFavourite, favClicked, setFavClicked }) {
 
     function addToFavourites() {
         setUserData((existingValues) => ({
@@ -11,10 +11,10 @@ function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData
             body: JSON.stringify({ attraction: attractionDetails, userData: userData }),
         })
             .then(response => response.json())
-            .then(data => console.log(data))
             .catch(error => {
                 console.log(error)
             });
+        setFavClicked(true)
     }
 
     function removeFromFavourites(xid) {
@@ -29,12 +29,8 @@ function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData
             },
             method: "DELETE",
             body: JSON.stringify( {userID: userData._id, attractionID: xid})
-
         })
             .then(response => response.json())
-            .then(response => {
-                console.log(response);
-            })
             .catch(error => {
                 console.log(error);
             });
@@ -42,11 +38,10 @@ function AttractionCard({ attractionDetails, isUserLogged, userData, setUserData
 
     return (
         <div className="attractionCard">
-            <h1>{attractionDetails.name}</h1>
+            <h1>{attractionDetails.name}{(isUserLogged && attractionDetails) && (favClicked ? <i className="fa-solid fa-star"></i> : <i className="fa-regular fa-star" onClick={addToFavourites}></i>) }</h1>
             {attractionDetails.preview ? <img src={attractionDetails.preview.source} alt={attractionDetails.name} /> : null}
             {attractionDetails.wikipedia_extracts ? <p>{attractionDetails.wikipedia_extracts.text}</p> : null}
-            {attractionDetails.otm ? <a href={attractionDetails.otm} target="_blank" rel="noreferrer">Show more at OpenTripMap <i class="fa-solid fa-map"></i></a> : null}
-            {(isUserLogged && attractionDetails) && <button onClick={addToFavourites}>Add to favourites</button>}
+            {attractionDetails.otm ? <a href={attractionDetails.otm} target="_blank" rel="noreferrer">Show more at OpenTripMap <i className="fa-solid fa-map"></i></a> : null}
             {isFavourite && <button onClick={() => removeFromFavourites(attractionDetails.xid)}>Remove from favourites</button>}
         </div>
     )
