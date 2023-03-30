@@ -22,22 +22,23 @@
     color: #dbe4ee;
     font-family: "Amatic SC";
     margin-right: 20px;
+    font-size: 25px;
 }
 
 .header_button {
-    width: 90px;
-    height: 30px;
+    width: 130px;
+    height: 35px;
     background-color: #f17300;
     border-radius: 4px;
     border-style: none;
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-family: "Amatic SC";
+    font-family: Georgia, serif;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    color: #ffffffb9;
+    color: #ffffffe5;
     transition-duration: 0.4s;
 }
 

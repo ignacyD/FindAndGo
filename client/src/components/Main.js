@@ -34,7 +34,7 @@ function Main({ isUserLogged, userData, setUserData }) {
         <div className="main">
             <div className="searchbar">
                 <input onChange={(event) => setCity(event.target.value)} placeholder="City" />
-                <button onClick={getAttractions}>Search</button>
+                <button onClick={getAttractions}>Search  <i class="fa-solid fa-magnifying-glass"></i> </button>
             </div>
             {attractionsList.length > 0 ? (
                 <div className="attractionsDisplay">
