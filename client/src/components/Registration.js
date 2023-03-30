@@ -6,7 +6,7 @@ import passwordValidator from "password-validator"
 function Registration() {
     const [message, setMessage] = useState("");
     const [validMessage, setValidMessage] = useState("");
-    const [doPasswordsMatch, setdoPasswordsMatch] = useState(false)
+    const [isReadyForSubmit, setIsReadyForSubmit] = useState(false)
     const [isPasswordStrong, setIsPasswordStrong] = useState(false)
     const [registrationData, setRegistrationData] = useState({
         firstName: "",
@@ -24,16 +24,18 @@ function Registration() {
         .has().digits(2)
 
     useEffect(() => {
+       
         if(!registrationData.firstName && !registrationData.lastName && !registrationData.email ){
             setMessage("all fields with * need to be filled in");
-            setdoPasswordsMatch(false);
+            setIsReadyForSubmit(false);
         }
+    
         else if (registrationData.password === registrationData.retypePassword) {
             setMessage("")
-            setdoPasswordsMatch(true)
+            setIsReadyForSubmit(true)
         } else {
             setMessage("Passwords don't match")
-            setdoPasswordsMatch(false)
+            setIsReadyForSubmit(false)
         }
     }, [registrationData])
 
@@ -127,7 +129,7 @@ function Registration() {
                 </label>
                 <p>{message}</p>
                 <p>{validMessage}</p>
-                <button disabled={!(doPasswordsMatch && isPasswordStrong)} type="submit">Submit</button>
+                <button disabled={!(isReadyForSubmit && isPasswordStrong)} type="submit">Submit</button>
             </form>
         </div>
     )
