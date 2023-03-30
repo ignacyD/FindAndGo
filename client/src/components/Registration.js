@@ -6,7 +6,7 @@ import passwordValidator from "password-validator"
 function Registration() {
     const [message, setMessage] = useState("");
     const [validMessage, setValidMessage] = useState("");
-    const [doPasswordsMatch, setdoPasswordsMatch] = useState(false)
+    const [isReadyForSubmit, setIsReadyForSubmit] = useState(false)
     const [isPasswordStrong, setIsPasswordStrong] = useState(false)
     const [registrationData, setRegistrationData] = useState({
         firstName: "",
@@ -24,14 +24,20 @@ function Registration() {
         .has().digits(2)
 
     useEffect(() => {
-        if (registrationData.password === registrationData.retypePassword) {
+       
+        if(!registrationData.firstName && !registrationData.lastName && !registrationData.email ){
+            setMessage("all fields with * need to be filled in");
+            setIsReadyForSubmit(false);
+        }
+    
+        else if (registrationData.password === registrationData.retypePassword) {
             setMessage("")
-            setdoPasswordsMatch(true)
+            setIsReadyForSubmit(true)
         } else {
             setMessage("Passwords don't match")
-            setdoPasswordsMatch(false)
+            setIsReadyForSubmit(false)
         }
-    }, [registrationData.password, registrationData.retypePassword])
+    }, [registrationData])
 
     useEffect(() => {
         if (!schema.validate(registrationData.password)) {
@@ -79,7 +85,7 @@ function Registration() {
                 <label>
                     <input
                         type="text"
-                        placeholder="First name"
+                        placeholder="*First name"
                         name='firstName'
                         value={registrationData.firstName}
                         onChange={updateData}
@@ -88,7 +94,7 @@ function Registration() {
                 <label>
                     <input
                         type="text"
-                        placeholder="Last name"
+                        placeholder="*Last name"
                         name='lastName'
                         value={registrationData.lastName}
                         onChange={updateData}
@@ -97,7 +103,7 @@ function Registration() {
                 <label>
                     <input
                         type="email"
-                        placeholder="Email"
+                        placeholder="*Email"
                         name='email'
                         value={registrationData.email}
                         onChange={updateData}
@@ -106,7 +112,7 @@ function Registration() {
                 <label>
                     <input
                         type="password"
-                        placeholder="Password"
+                        placeholder="*Password"
                         name='password'
                         value={registrationData.password}
                         onChange={updateData}
@@ -115,7 +121,7 @@ function Registration() {
                 <label>
                     <input
                         type="password"
-                        placeholder="Re-type password"
+                        placeholder="*Re-type password"
                         name='retypePassword'
                         value={registrationData.retypePassword}
                         onChange={updateData}
@@ -123,7 +129,7 @@ function Registration() {
                 </label>
                 <p>{message}</p>
                 <p>{validMessage}</p>
-                <button disabled={!(doPasswordsMatch && isPasswordStrong)} type="submit">Submit</button>
+                <button disabled={!(isReadyForSubmit && isPasswordStrong)} type="submit">Submit</button>
             </form>
         </div>
     )
