@@ -2,6 +2,7 @@ div.favourites {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 60px;
 }
 
 div.favourites div.attractionCard {
@@ -11,14 +12,14 @@ div.favourites div.attractionCard {
     flex-direction: column;
     align-items: center;
     border-bottom: 1px solid #000000;
-    width: 60vw;
-    background-color: #81a4cd;
+    width: 50vw;
+    background-color: #3E7CB1;
     color: white;
     text-align: center;
     gap: 10px;
     border:3px solid #f17300;
     border-radius: 10px;
-
+    padding: 20px;
 }
 
 div.favourites div.attractionCard img {
