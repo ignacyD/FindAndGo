@@ -1,0 +1,83 @@
+div.opinions .title {
+    background-color: #054a91;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    margin: 5vh 40vw 5vh 40vw;
+    font-family: "Andika", sans-serif;
+}
+
+div.opinions form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #3E7CB1;
+    margin: 5vh 20vw 5vh 20vw;
+    padding: 20px 50px;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: "Andika", sans-serif;
+}
+
+div.opinions input {
+    width: 50vw;
+    padding: 12px 20px;
+    border: 10px;
+    border-style: solid;
+    border-color: #3E7CB1;
+    background-color: #DBE4EE;
+    display: block;
+    font-family: 'Andika', sans-serif;
+}
+
+div.opinions textarea {
+    width: 50vw;
+    height: 5vw;
+    padding: 12px 20px;
+    border: 10px;
+    border-style: solid;
+    border-color: #3E7CB1;
+    background-color: #DBE4EE;
+    font-family: 'Andika', sans-serif;
+    resize: none;
+}
+
+div.opinions button {
+    background-color: #F17300;
+    color: #ffffffb9;
+    margin: auto;
+    display: block;
+    border-radius: 4px;
+    border-style: none;
+    width: 15%;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    transition-duration: 0.4s;
+}
+
+div.opinions button:hover {
+    background-color: #b0570a;
+}
+    
+div.opinions button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+div.opinions div.opinion {
+    background-color: #3E7CB1;
+    color: #FFFFFF;
+    font-family: "Andika", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 5vh 20vw 5vh 20vw;
+    padding: 20px 50px;
+}
+
+div.opinions div.opinion .createdBy {
+    font-size: 15px;
+    color: rgb(180, 180, 180)
+}

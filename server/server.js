@@ -1,6 +1,7 @@
 
 const mongoose = require('mongoose');
 const User = require("./model/User");
+const Opinion = require("./model/Opinion")
 mongoose.connect("mongodb+srv://IgnacyG:FindandGo@cluster0.uqvqvaj.mongodb.net/Find&Go");
 const express = require('express');
 const cors = require('cors');
@@ -52,4 +53,19 @@ app.delete("/favourites", (req, res) => {
     User.updateOne({ _id: req.body.userID }, 
         {$pull: { favourites: { xid: req.body.attractionID}}})
         .then(user => res.json(user))
+})
+
+app.get('/opinions', async (req, res) => {
+    const result = await Opinion.find();
+    res.json(result)
+})
+
+app.post('/opinions', (req, res) => {
+    const opinion = new Opinion({
+        ...req.body,
+        createdAt: Date.now()
+    })
+    opinion.save()
+        .then(opinion => res.json(opinion))
+        .catch(error => console.error(error))
 })
